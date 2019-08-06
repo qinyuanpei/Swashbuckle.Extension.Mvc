@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swashbuckle.Extension.Mvc", "Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc.csproj", "{4C37DA72-6EDC-4DBD-B02F-2EAD99B8E6CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultMvcProject", "DefaultMvcProject\DefaultMvcProject.csproj", "{DAE3AEFA-3B02-4727-B533-71974C5F0095}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C37DA72-6EDC-4DBD-B02F-2EAD99B8E6CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C37DA72-6EDC-4DBD-B02F-2EAD99B8E6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C37DA72-6EDC-4DBD-B02F-2EAD99B8E6CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C37DA72-6EDC-4DBD-B02F-2EAD99B8E6CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE3AEFA-3B02-4727-B533-71974C5F0095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE3AEFA-3B02-4727-B533-71974C5F0095}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE3AEFA-3B02-4727-B533-71974C5F0095}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE3AEFA-3B02-4727-B533-71974C5F0095}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
