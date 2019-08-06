@@ -90,7 +90,7 @@ namespace Swashbuckle.Extension.Mvc
             {
                 Name = p.Name,
                 Documentation = string.Empty,
-                Source = ApiParameterSource.FromBody,
+                Source = ApiParameterSource.Unknown,
                 ParameterDescriptor = new MvcHttpActionParameterDescriptor(p, new MvcHttpActionDescriptor(methodInfo)),
             }).ToList());
         }

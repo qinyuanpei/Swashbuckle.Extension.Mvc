@@ -1,0 +1,39 @@
+﻿using DefaultMvcProject.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace DefaultMvcProject.Controllers
+{
+    public class UserController : Controller
+    {
+        private List<UserInfo> _userList = new List<UserInfo>()
+        {
+            new UserInfo() {UserId=1, UserName="李白",Email="libai@tang.com"},
+            new UserInfo() {UserId=2, UserName="杜甫",Email="dufu@tang.com"},
+            new UserInfo() {UserId=3, UserName="岑参",Email="censhen@tang.com"},
+            new UserInfo() {UserId=4, UserName="王维",Email="wangwei@tang.com"},
+        };
+
+        // GET: User
+        public ActionResult GetUserById(int uid)
+        {
+            var userInfo = _userList.FirstOrDefault(u => u.UserId == uid);
+            return Json(new { Flag = userInfo == null, Data = userInfo });
+        }
+
+        public ActionResult GetUsers()
+        {
+            return Json(new { Flag = true, Data = _userList });
+        }
+         
+        public ActionResult SaveUser(UserInfo userInfo)
+        {
+            userInfo.UserId = _userList.Count + 1;
+            _userList.Add(userInfo);
+            return Json(new { Flag = true, Data = userInfo });
+        }
+    }
+}

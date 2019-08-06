@@ -24,3 +24,9 @@ D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Exte
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\obj\Debug\Swashbuckle.Extension.Mvc.csprojResolveAssemblyReference.cache
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\obj\Debug\Swashbuckle.Extension.Mvc.dll
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\obj\Debug\Swashbuckle.Extension.Mvc.pdb
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\bin\Debug\zh-Hans\System.Web.Helpers.resources.dll
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll

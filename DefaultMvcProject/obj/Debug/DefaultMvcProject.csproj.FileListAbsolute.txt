@@ -1,4 +1,3 @@
-D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\obj\Debug\DefaultMvcProject.csprojResolveAssemblyReference.cache
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\bin\roslyn\csc.exe
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -53,5 +52,7 @@ D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProjec
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\obj\Debug\DefaultMvcProject.csprojResolveAssemblyReference.cache
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\obj\Debug\DefaultMvcProject.dll
 D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\obj\Debug\DefaultMvcProject.pdb
+D:\Projects\Swashbuckle.Extension.Mvc\Swashbuckle.Extension.Mvc\DefaultMvcProject\bin\DefaultMvcProject.XML
