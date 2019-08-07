@@ -17,18 +17,31 @@ namespace DefaultMvcProject.Controllers
             new UserInfo() {UserId=4, UserName="王维",Email="wangwei@tang.com"},
         };
 
-        // GET: User
+        /// <summary>
+        /// 获取指定用户
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <returns></returns>
         public ActionResult GetUserById(int uid)
         {
             var userInfo = _userList.FirstOrDefault(u => u.UserId == uid);
             return Json(new { Flag = userInfo == null, Data = userInfo });
         }
 
+        /// <summary>
+        /// 获取所有用户
+        /// </summary>
+        /// <returns></returns>
         public ActionResult GetUsers()
         {
             return Json(new { Flag = true, Data = _userList });
         }
-         
+        
+        /// <summary>
+        /// 保存用户
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <returns></returns>
         public ActionResult SaveUser(UserInfo userInfo)
         {
             userInfo.UserId = _userList.Count + 1;
