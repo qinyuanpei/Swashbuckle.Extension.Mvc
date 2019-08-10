@@ -7,6 +7,9 @@ using System.Web.Mvc;
 
 namespace DefaultMvcProject.Controllers
 {
+    /// <summary>
+    /// UserController
+    /// </summary>
     public class UserController : Controller
     {
         private List<UserInfo> _userList = new List<UserInfo>()

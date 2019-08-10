@@ -4,6 +4,11 @@
         <name>DefaultMvcProject</name>
     </assembly>
     <members>
+        <member name="T:DefaultMvcProject.Controllers.UserController">
+            <summary>
+            UserController
+            </summary>
+        </member>
         <member name="M:DefaultMvcProject.Controllers.UserController.GetUserById(System.Int32)">
             <summary>
             获取指定用户
