@@ -28,7 +28,7 @@ namespace DefaultMvcProject.Controllers
         public ActionResult GetUserById(int uid)
         {
             var userInfo = _userList.FirstOrDefault(u => u.UserId == uid);
-            return Json(new { Flag = userInfo == null, Data = userInfo });
+            return Json(new { Flag = userInfo == null, Data = userInfo }, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace DefaultMvcProject.Controllers
         /// <returns></returns>
         public ActionResult GetUsers()
         {
-            return Json(new { Flag = true, Data = _userList });
+            return Json(new { Flag = true, Data = _userList }, JsonRequestBehavior.AllowGet);
         }
         
         /// <summary>
@@ -49,7 +49,20 @@ namespace DefaultMvcProject.Controllers
         {
             userInfo.UserId = _userList.Count + 1;
             _userList.Add(userInfo);
-            return Json(new { Flag = true, Data = userInfo });
+            return Json(new { Flag = true, Data = userInfo }, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 保存用户(Post请求测试)
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Save(UserInfo userInfo)
+        {
+            userInfo.UserId = _userList.Count + 1;
+            _userList.Add(userInfo);
+            return Json(new { Flag = true, Data = userInfo }, JsonRequestBehavior.AllowGet);
         }
     }
 }

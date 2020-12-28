@@ -66,7 +66,35 @@ namespace Swashbuckle.Extension.Mvc
                 var apiDescription = new ApiDescription();
                 apiDescription.ActionDescriptor = new MvcHttpActionDescriptor(method);
                 apiDescription.ActionDescriptor.ControllerDescriptor = new HttpControllerDescriptor(_configuration, controllerName, type);
-                apiDescription.HttpMethod = HttpMethod.Post;
+
+                //判断请求类型(暂时不支持patch,trace)
+                var actionMethod = method.GetCustomAttribute<ActionMethodSelectorAttribute>();
+
+                if (actionMethod == null || typeof(System.Web.Mvc.HttpGetAttribute) == actionMethod.GetType())
+                {
+                    apiDescription.HttpMethod = HttpMethod.Get;
+                }
+                else if (typeof(System.Web.Mvc.HttpDeleteAttribute) == actionMethod.GetType())
+                {
+                    apiDescription.HttpMethod = HttpMethod.Delete;
+                }
+                else if (typeof(System.Web.Mvc.HttpHeadAttribute) == actionMethod.GetType())
+                {
+                    apiDescription.HttpMethod = HttpMethod.Head;
+                }
+                else if (typeof(System.Web.Mvc.HttpOptionsAttribute) == actionMethod.GetType())
+                {
+                    apiDescription.HttpMethod = HttpMethod.Options;
+                }
+                else if (typeof(System.Web.Mvc.HttpPutAttribute) == actionMethod.GetType())
+                {
+                    apiDescription.HttpMethod = HttpMethod.Put;
+                }
+                else
+                {
+                    apiDescription.HttpMethod = HttpMethod.Post;
+                }
+
                 apiDescription.Route = new HttpRoute(string.Format("{0}/{1}", controllerName, method.Name));
                 apiDescription.RelativePath = string.Format("{0}/{1}", controllerName, method.Name);
                 apiDescription.Documentation = string.Empty;
