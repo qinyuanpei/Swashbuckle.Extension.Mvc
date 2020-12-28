@@ -13,23 +13,22 @@ namespace Swashbuckle.Extension.Mvc
     /// <summary>
     /// Action Descriptor for MVC
     /// </summary>
-    public class MvcHttpActionDescriptor: HttpActionDescriptor
+    public class MvcHttpActionDescriptor: ReflectedHttpActionDescriptor
     {
-        private MethodInfo _methodInfo;
         public MvcHttpActionDescriptor(MethodInfo methodInfo)
         {
-            _methodInfo = methodInfo;
+            this.MethodInfo = methodInfo;
         }
 
         /// <summary>
         /// ActionName
         /// </summary>
-        public override string ActionName => _methodInfo.Name;
+        public override string ActionName => MethodInfo.Name;
 
         /// <summary>
         /// ReturnType
         /// </summary>
-        public override Type ReturnType => _methodInfo.ReturnType;
+        public override Type ReturnType => MethodInfo.ReturnType;
 
         /// <summary>
         /// Return Descriptors of Parameters
@@ -39,7 +38,7 @@ namespace Swashbuckle.Extension.Mvc
         {
             var self = this;
             return new Collection<HttpParameterDescriptor>(
-                _methodInfo.GetParameters().Select(p => new MvcHttpActionParameterDescriptor(p, self) as HttpParameterDescriptor).ToList()
+                MethodInfo.GetParameters().Select(p => new MvcHttpActionParameterDescriptor(p, self) as HttpParameterDescriptor).ToList()
             );
         }
 
@@ -53,7 +52,7 @@ namespace Swashbuckle.Extension.Mvc
         public override Task<object> ExecuteAsync(HttpControllerContext controllerContext, IDictionary<string, object> arguments, CancellationToken cancellationToken)
         {
             var tsc = new TaskCompletionSource<object>();
-            var result = _methodInfo.Invoke(controllerContext.Controller, arguments.Select(s => s.Value).ToArray());
+            var result = MethodInfo.Invoke(controllerContext.Controller, arguments.Select(s => s.Value).ToArray());
             tsc.SetResult(result);
             return tsc.Task;
         }

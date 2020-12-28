@@ -29,5 +29,12 @@
             <param name="userInfo"></param>
             <returns></returns>
         </member>
+        <member name="M:DefaultMvcProject.Controllers.UserController.Save(DefaultMvcProject.Models.UserInfo)">
+            <summary>
+            保存用户(Post请求测试)
+            </summary>
+            <param name="userInfo"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
