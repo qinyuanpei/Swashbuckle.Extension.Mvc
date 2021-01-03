@@ -23,7 +23,19 @@ namespace Swashbuckle.Extension.Mvc
         /// HttpConfiguration
         /// </summary>
         private HttpConfiguration _configuration;
-
+        
+        /// <summary>
+        /// Mapping of Http Methods
+        /// </summary>
+        private Dictionary<Type, HttpMethod> _httpMethodsMap => 
+            new Dictionary<Type, HttpMethod> {
+                { typeof(System.Web.Mvc.HttpGetAttribute), HttpMethod.Get },
+                { typeof(System.Web.Mvc.HttpDeleteAttribute), HttpMethod.Delete },
+                { typeof(System.Web.Mvc.HttpHeadAttribute), HttpMethod.Head },
+                { typeof(System.Web.Mvc.HttpOptionsAttribute), HttpMethod.Options },
+                { typeof(System.Web.Mvc.HttpPutAttribute), HttpMethod.Put },
+                { typeof(System.Web.Mvc.HttpPostAttribute), HttpMethod.Post },
+        };
 
         public MvcApiExplorer(Assembly assembly, HttpConfiguration configuration) : base(configuration)
         {
@@ -67,34 +79,16 @@ namespace Swashbuckle.Extension.Mvc
                 apiDescription.ActionDescriptor = new MvcHttpActionDescriptor(method);
                 apiDescription.ActionDescriptor.ControllerDescriptor = new HttpControllerDescriptor(_configuration, controllerName, type);
 
-                //判断请求类型(暂时不支持patch,trace)
+                //判断请求类型(暂时不支持Patch，Trace)
                 var actionMethod = method.GetCustomAttribute<ActionMethodSelectorAttribute>();
-
-                if (actionMethod == null || typeof(System.Web.Mvc.HttpGetAttribute) == actionMethod.GetType())
-                {
+                if (actionMethod == null) 
                     apiDescription.HttpMethod = HttpMethod.Get;
-                }
-                else if (typeof(System.Web.Mvc.HttpDeleteAttribute) == actionMethod.GetType())
-                {
-                    apiDescription.HttpMethod = HttpMethod.Delete;
-                }
-                else if (typeof(System.Web.Mvc.HttpHeadAttribute) == actionMethod.GetType())
-                {
-                    apiDescription.HttpMethod = HttpMethod.Head;
-                }
-                else if (typeof(System.Web.Mvc.HttpOptionsAttribute) == actionMethod.GetType())
-                {
-                    apiDescription.HttpMethod = HttpMethod.Options;
-                }
-                else if (typeof(System.Web.Mvc.HttpPutAttribute) == actionMethod.GetType())
-                {
-                    apiDescription.HttpMethod = HttpMethod.Put;
-                }
-                else
-                {
-                    apiDescription.HttpMethod = HttpMethod.Post;
-                }
 
+                if (_httpMethodsMap.ContainsKey(actionMethod.GetType()))
+                    apiDescription.HttpMethod = _httpMethodsMap[actionMethod.GetType()];
+                else 
+                    continue;
+                
                 apiDescription.Route = new HttpRoute(string.Format("{0}/{1}", controllerName, method.Name));
                 apiDescription.RelativePath = string.Format("{0}/{1}", controllerName, method.Name);
                 apiDescription.Documentation = string.Empty;

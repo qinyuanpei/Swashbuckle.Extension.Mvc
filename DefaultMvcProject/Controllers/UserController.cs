@@ -39,21 +39,9 @@ namespace DefaultMvcProject.Controllers
         {
             return Json(new { Flag = true, Data = _userList }, JsonRequestBehavior.AllowGet);
         }
-        
-        /// <summary>
-        /// 保存用户
-        /// </summary>
-        /// <param name="userInfo"></param>
-        /// <returns></returns>
-        public ActionResult SaveUser(UserInfo userInfo)
-        {
-            userInfo.UserId = _userList.Count + 1;
-            _userList.Add(userInfo);
-            return Json(new { Flag = true, Data = userInfo }, JsonRequestBehavior.AllowGet);
-        }
 
         /// <summary>
-        /// 保存用户(Post请求测试)
+        /// 保存用户
         /// </summary>
         /// <param name="userInfo"></param>
         /// <returns></returns>
