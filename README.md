@@ -49,7 +49,7 @@ namespace DefaultMvcProject
 ```
 * Enjoy Swagger in ASP.NET MVC :)
 
-![支持ASP.NET MVC的Swagger](./DefaultMvcProject.png)
+![支持ASP.NET MVC的Swagger](https://github.com/qinyuanpei/Swashbuckle.Extension.Mvc/blob/master/DefaultMvcProject.png?raw=true)
 
 
 
