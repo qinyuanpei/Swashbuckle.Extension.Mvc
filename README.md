@@ -22,6 +22,7 @@ GlobalConfiguration.Configuration.Services.Replace(typeof(IApiExplorer), apiExpl
 
 ![支持ASP.NET MVC的Swagger](https://github.com/qinyuanpei/Swashbuckle.Extension.Mvc/blob/master/DefaultMvcProject.png?raw=true)
 
-
-
+# Related Links：
+* [https://blog.yuanpei.me/posts/4116164325/](https://blog.yuanpei.me/posts/4116164325/)
+* [https://qinyuanpei.blog.csdn.net/article/details/100061297](https://qinyuanpei.blog.csdn.net/article/details/100061297)
 
