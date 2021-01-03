@@ -47,7 +47,9 @@ namespace DefaultMvcProject
     }
 }
 ```
-* Enjoy:)
+* Enjoy Swagger in ASP.NET MVC :)
+
+![支持ASP.NET MVC的Swagger](./DefaultMvcProject.png)
 
 
 

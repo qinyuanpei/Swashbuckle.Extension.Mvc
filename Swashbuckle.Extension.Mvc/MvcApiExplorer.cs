@@ -81,14 +81,18 @@ namespace Swashbuckle.Extension.Mvc
 
                 //判断请求类型(暂时不支持Patch，Trace)
                 var actionMethod = method.GetCustomAttribute<ActionMethodSelectorAttribute>();
-                if (actionMethod == null) 
+                if (actionMethod == null)
+                {
                     apiDescription.HttpMethod = HttpMethod.Get;
+                }
+                else
+                {
+                    if (_httpMethodsMap.ContainsKey(actionMethod.GetType()))
+                        apiDescription.HttpMethod = _httpMethodsMap[actionMethod.GetType()];
+                    else
+                        continue;
+                }
 
-                if (_httpMethodsMap.ContainsKey(actionMethod.GetType()))
-                    apiDescription.HttpMethod = _httpMethodsMap[actionMethod.GetType()];
-                else 
-                    continue;
-                
                 apiDescription.Route = new HttpRoute(string.Format("{0}/{1}", controllerName, method.Name));
                 apiDescription.RelativePath = string.Format("{0}/{1}", controllerName, method.Name);
                 apiDescription.Documentation = string.Empty;
